@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modals</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Modal içeriğine biraz padding ekleme */
+    .modal-body {
+      padding: 20px;
+    }
+
+    /* Modal arka plan rengi ve kenarlık */
+    .modal-content {
+      background-color: #f8f9fa;
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Modal başlığındaki renk ve stil */
+    .modal-title {
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Kapatma butonunun stilini düzenleme */
+    .btn-close {
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    /* Modal footer butonlarına biraz margin ekleme */
+    .modal-footer button {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body class="container my-4">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open Modal
+  </button>
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal 1</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Record</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="modal fade" id="myModal2">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal 2</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Record</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+
+  <button id="btnModal" class="btn btn-primary" >
+    Open Modal
+  </button>
+
+  <div class="modal fade" id="myModal3">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modal 3</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Record</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script>
+    $(function(){
+        $('#myModal2').modal('show');
+
+        $('#btnModal').click(function(){
+        $('#myModal3').modal('show');
+        });
+
+        $('#myModal3').on('hidde.bs.modal',function(e){
+          console.log('hidde');
+        });
+
+        $('#myModal3').on('hidden.bs.modal',function(e){
+          console.log('hidden');
+        });
+
+        $('#myModal3').on('show.bs.modal',function(e){
+          console.log('show');
+        });
+
+        $('#myModal3').on('shown.bs.modal',function(e){
+          console.log('shown');
+        });
+
+
+    });
+  </script>
+</body>
+</html>
